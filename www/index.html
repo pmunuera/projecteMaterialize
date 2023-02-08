@@ -6,7 +6,10 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
         <title>Starter Template - Materialize</title>
-        <meta http-equiv="Content-Security-Policy" content="default-src https://code.jquery.com https://fonts.gstatic.com 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src https://fonts.googleapis.com 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <meta http-equiv="Content-Security-Policy" content="default-src https://code.jquery.com https://fonts.gstatic.com 'self' 
+        data: api.spaceflightnewsapi.net ; gap: https://ssl.gstatic.com 'unsafe-eval'; style-src https://fonts.googleapis.com 'self' 'unsafe-inline'; 
+        media-src *; img-src 'self' 
+        data: api.spaceflightnewsapi.net content:;">
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
@@ -37,10 +40,19 @@
         </nav>
         <ul id="tabs-swipe-demo" class="tabs">
           <li class="tab col s3"><a href="#test-swipe-1">Test 1</a></li>
-          <li class="tab col s3"><a class="active" href="#test-swipe-2">Test 2</a></li>
+          <li class="tab col s3"><a href="#test-swipe-2">Test 2</a></li>
           <li class="tab col s3"><a href="#test-swipe-3">Test 3</a></li>
         </ul>
-        <div id="test-swipe-1" class="col s12 blue tabs-content">Test 1</div>
+        <div id="test-swipe-1" class="col s12 blue tabs-content">
+
+          <a id="loadArticlesButton" class="waves-effect waves-light btn"><i class="material-icons left">cloud</i>button</a>
+          
+          <ul id="articleList" class="collection with-header">
+            <li class="collection-header"><h4>TITLES</h4></li>
+          </ul>
+
+        </div>
+        
         <div id="test-swipe-2" class="col s12 red tabs-content">Test 2</div>
         <div id="test-swipe-3" class="col s12 green tabs-content">
           <div class="row">
