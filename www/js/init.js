@@ -64,7 +64,7 @@ function loadInformation(e){
           $('#test-swipe-2').append("<p style='text-align:center'>ID: "+element+"</p>");
         }
         else if(item=="url"){
-          $('#test-swipe-2').append("<a href='"+element+"' targer='_blank'>"+element+"</a>");
+          $('#test-swipe-2').append("<a href='"+element+"' onclick='window.open('"+element+"', '_system'); return false;'>"+element+"</a>");
         }
         else if(item=="title"){
           $('#test-swipe-2').append("<h1 style='text-align:center'>"+element+"</h1>");
