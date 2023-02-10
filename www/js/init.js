@@ -32,7 +32,8 @@ function load_articles(){
         +"<h5 class='center'>"+msg[item].title+"</h5>"
         +"<h6 class='center'>From: "+msg[item].newsSite+"</h6>"
 
-        +"<p class='light'>"+msg[item].summary+"</p>"
+        +"<p class='light'>"+msg[item].summary+"</p>"+
+        "<a href='"+msg[item].url+"'>"+msg[item].url+"</a>"
       +"</div></div>");
       $('.row').append(elem2);
       $('#sendTo2',elem).click(loadInformation);
