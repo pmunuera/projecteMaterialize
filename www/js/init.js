@@ -28,7 +28,7 @@ function load_articles(){
       var elem = $("<li class='collection-item'><div id='"+msg[item].id+"'>"+title+"<a id='sendTo2' href='#!' class='secondary-content'><i class='material-icons'>send</i></a></div></li>");
       var elem2= $("<div class='col s12 m4'>"+ 
       "<div class='icon-block'>"
-        +"<h2 class='center'><img align='center' src="+msg[item].imageUrl+" height=100px width=100px></h2>"
+        +"<h2 class='center'><img align='center' src="+msg[item].imageUrl+" height=200px width=200px></h2>"
         +"<h5 class='center'>"+msg[item].title+"</h5>"
         +"<h6 class='center'>From: "+msg[item].newsSite+"</h6>"
 
