@@ -13,8 +13,46 @@ function onDeviceReady() {
   
     console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
     //document.getElementById('deviceready').classList.add('ready');
+    document.getElementById('captura').onclick = function(e){
+      photo();
+      return false;
+    }
+}
+function photo(){
+  var cameraOptions = {
+    destinationType: Camera.DestinationType.FILE_URI,
+      encodingType : Camera.EncodingType.JPEG,
+ correctOrientation: true,
+         sourceType: Camera.PictureSourceType.CAMERA
 }
 
+navigator.camera.getPicture(
+ function(imageURI) {
+ resolveLocalFileSystemURL(imageURI, function(fileEntry) {
+   // fileEntry is usable for uploading without holding image in memory...
+   
+   fileEntry.file(function(file) { 
+     var reader = new FileReader();
+ 
+     reader.onloadend = function() {
+       // this.result contains the Data URI usable as a preview thumbnail
+       $('#myImage').attr('src', this.result);
+     }
+ 
+     reader.readAsDataURL(file);
+   }, onFail);
+ }, onFail);
+}, onFail, cameraOptions);
+
+}
+function onSuccess(imageData) {
+  var image = document.getElementById('myImage');
+  image.src = "data:image/jpeg;base64," + imageData;
+}
+
+function onFail(message) {
+  alert('Failed because: ' + message);
+}
 function load_articles(){
   $('#articleList').children().remove();
   $('.row').children().remove();
